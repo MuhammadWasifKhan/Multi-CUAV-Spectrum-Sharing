@@ -32,7 +32,7 @@ dt_fixed=5; Tflight=220; Vmax_UAV=5;
 STEP_MAX_FIXED=Vmax_UAV*dt_fixed; Dmin_UAV=100;
 AO_AP_iter=3; AO_traj_iter=5; alpha_traj=0.30; fd_eps=1;
 Nsamp_traj=5; trajSeedBase=77777; dropSeedBase=9000;
-NDrops=1; MC=300; % Edit only for desired production Monte Carlo sample size.
+NDrops=30; MC=300; % Edit only for desired production Monte Carlo sample size.
 reserveLic=(Ninitial+1):J; reserveUn=(Ninitial+1):M;
 avgRateHybrid=zeros(NDrops,numel(threshold_list_dBm));
 avgRateReserved=zeros(NDrops,numel(threshold_list_dBm));
