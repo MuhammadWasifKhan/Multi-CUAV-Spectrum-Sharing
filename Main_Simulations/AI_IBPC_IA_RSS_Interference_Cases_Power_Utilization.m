@@ -1,10 +1,9 @@
 clc; clear; close all;
-% Modularized from the original repository: function bodies unchanged.
+% Reproducible function-path setup. Keeps existing CVX installation on path.
 projectRoot=fileparts(fileparts(mfilename('fullpath')));
-overrideDir=fullfile(projectRoot,'Convergence_Overrides');
-if contains([path pathsep],[overrideDir pathsep]),rmpath(overrideDir);end
-addpath(fullfile(projectRoot,'Common_Functions'),'-begin');
-addpath(fullfile(projectRoot,'Cases_Functions'),'-begin');
+addpath(projectRoot,'-begin');
+configure_simulation_paths(projectRoot,'cases');
+% Modularized from the original repository: function bodies unchanged.
 
 %% ============================================================
 % JOURNAL FOUR-CASE INTERFERENCE STUDY: AI-IBPC versus IA-RSS

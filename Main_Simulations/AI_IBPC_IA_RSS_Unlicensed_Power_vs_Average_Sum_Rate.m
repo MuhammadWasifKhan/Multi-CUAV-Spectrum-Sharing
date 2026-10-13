@@ -1,9 +1,9 @@
 clc; clear; close all;
-% Modularized from the original repository: function bodies unchanged.
+% Reproducible function-path setup. Keeps existing CVX installation on path.
 projectRoot=fileparts(fileparts(mfilename('fullpath')));
-overrideDir=fullfile(projectRoot,'Convergence_Overrides');
-if contains([path pathsep],[overrideDir pathsep]),rmpath(overrideDir);end
-addpath(fullfile(projectRoot,'Unlicensed_Power_Functions'),'-begin');
+addpath(projectRoot,'-begin');
+configure_simulation_paths(projectRoot,'unlicensed');
+% Modularized from the original repository: function bodies unchanged.
 % Proposed I: AI-IBPC; Proposed II: IA-RSS (reserved-subchannel selection).
 % Standalone MATLAB R2016b+ script. CVX 2.2 required for trajectory SCA.
 % Both algorithms use identical geometry, random seeds, initial paths and

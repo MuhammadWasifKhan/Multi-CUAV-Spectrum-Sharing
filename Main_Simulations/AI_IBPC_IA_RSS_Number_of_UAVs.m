@@ -1,9 +1,9 @@
 clc; clear; close all;
-% Modularized from the original repository: function bodies unchanged.
+% Reproducible function-path setup. Keeps existing CVX installation on path.
 projectRoot=fileparts(fileparts(mfilename('fullpath')));
-overrideDir=fullfile(projectRoot,'Convergence_Overrides');
-if contains([path pathsep],[overrideDir pathsep]),rmpath(overrideDir);end
-addpath(fullfile(projectRoot,'Common_Functions'),'-begin');
+addpath(projectRoot,'-begin');
+configure_simulation_paths(projectRoot,'common');
+% Modularized from the original repository: function bodies unchanged.
 % COMPARISON: Proposed I AI-IBPC versus Proposed II IA-RSS.
 % NUMBER OF UAVs versus average sum rate.
 % IMPORTANT: AI-IBPC and IA-RSS logic is unchanged from the validated code.
@@ -34,7 +34,7 @@ dt_fixed=5; Tflight=220; Vmax_UAV=5;
 STEP_MAX_FIXED=Vmax_UAV*dt_fixed; Dmin_UAV=100;
 AO_AP_iter=3; AO_traj_iter=5; alpha_traj=0.30; fd_eps=1;
 Nsamp_traj=5; trajSeedBase=77777; dropSeedBase=9000;
-NDrops=30; MC=300; % Change only to 30 after the one-drop check.
+NDrops=1; MC=2; % Change only to 30 after the one-drop check.
 reserveLic=(Ninitial+1):J; reserveUn=(Ninitial+1):M;
 avgRateHybrid=zeros(NDrops,numel(U_list));
 avgRateReserved=zeros(NDrops,numel(U_list));

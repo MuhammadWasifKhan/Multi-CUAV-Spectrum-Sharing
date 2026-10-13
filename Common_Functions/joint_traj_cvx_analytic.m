@@ -53,7 +53,7 @@ try
         Qtrial=permute(reshape(X,N,2,U),[3 1 2]);
     end
 catch ME
-    warning('Joint trajectory CVX: %s',ME.message);
+    warning('Joint trajectory CVX: %s',getReport(ME,'basic','hyperlinks','off'));
     try,cvx_clear;catch,end
 end
 end
