@@ -1,0 +1,6 @@
+function [best,info]=reserved_sc_search(start,policy,replacement, ...
+    cases,HL,HU,HP,HW,GL,GU,PL,PU,hp,hw,Ppbs,Pwifi,nL,nU,BL,BU, ...
+    mmIter,leakFrac,alpha,resL,resU)
+% Legacy unlimited version is intentionally not used in this experiment.
+error('Use budgeted_reserved_search instead');
+end
