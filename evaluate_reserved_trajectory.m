@@ -1,0 +1,13 @@
+function avgRate=evaluate_reserved_trajectory(Q,WS,WP,WW,w_b,w_wifi,H,fL,fU,fP,fW,c,A2G,nP,nW,Shadow,...
+    Ppbs,Pwifi,nL,nU,GL,GU,PL,PU,QoS,BL,BU,AO_AP_iter,seedBase,useRayleigh,useShadow,...
+    useShadowA2G,Nt,mmIter,leakFrac,regAlpha,Ninitial,resL,resU)
+s=0; N=size(Q,2);
+for n=1:N
+    [~,r]=eval_slot_reserved_final(squeeze(Q(:,n,:)),WS,WP,WW,w_b,w_wifi,H,fL,fU,fP,fW,c,A2G,...
+        nP,nW,Shadow,Ppbs,Pwifi,nL,nU,GL,GU,PL,PU,QoS,BL,BU,AO_AP_iter,seedBase+n,...
+        useRayleigh,useShadow,useShadowA2G,Nt,mmIter,leakFrac,regAlpha,Ninitial,resL,resU);
+    s=s+r;
+end
+avgRate=s/N;
+end
+
