@@ -18,7 +18,7 @@ A=struct('a',9.61,'b',0.16,'etaL',1,'etaN',20,'sigL',4,'sigN',6);
 GL=10^((-80-30)/10)*ones(J,1); GU=10^((-80-30)/10)*ones(M,1);
 bs=[500,500]; ap=[500,700]; starts=[120,850;260,180;430,620];
 T=220; dt=5; N=round(T/dt)+1; step=25; Dmin=100;
-AO=3; trajIter=5; mmIter=10; NDrops=1; MC=20;
+AO=3; trajIter=5; mmIter=10; NDrops=30; MC=300;
 seedBase=9000; active=1:J0; reserve=J0+1:J;
 R1=zeros(NDrops,numel(PUlist)); R2=R1; Qchange=zeros(NDrops,numel(PUlist),2);
 assert(exist('cvx_begin','file')==2,'Install and initialize CVX 2.2 before running.');
