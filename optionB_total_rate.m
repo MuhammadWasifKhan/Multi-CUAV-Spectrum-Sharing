@@ -1,0 +1,6 @@
+function total = optionB_total_rate(tx,HsuL,HsuU,hp2,hw2,P_PBS_j,P_WIFI_m, ...
+    sigma2L,sigma2U,BscL,BscU)
+total=compute_global_sum_rate_band_interuav(tx,HsuL,hp2,P_PBS_j,sigma2L,BscL,'lic')+ ...
+      compute_global_sum_rate_band_interuav(tx,HsuU,hw2,P_WIFI_m,sigma2U,BscU,'un');
+end
+
