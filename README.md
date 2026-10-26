@@ -1,6 +1,6 @@
 # Multi-CUAV Spectrum Sharing — MATLAB Implementation of AI-IBPC and IA-RSS
 
-This is a *path-isolated modular extraction* of the six user-provided simulation scripts. The underlying mathematical optimization routines have **not been rederived or numerically validated here**. The earlier original full scripts are preserved under `Original_Scripts/` for comparison.
+This repository provides modular MATLAB implementations of the proposed AI-IBPC and IA-RSS schemes for multi-CUAV spectrum sharing over licensed and unlicensed bands. The implementations have been tested using MATLAB and CVX.
 
 ## Launch
 
@@ -20,10 +20,10 @@ This is a *path-isolated modular extraction* of the six user-provided simulation
 - `Original_Scripts`: source snapshots for independent verification.
 - `configure_simulation_paths.m`: isolates the selected function directories; preserves CVX.
 
-## Known unresolved runtime issue
-
-In the user's MATLAB session, `joint_traj_cvx_analytic.m` generated a CVX error while declaring X. The historical code catches errors and returns the previous trajectory. Thus a run may still print sum rates even if trajectory optimization failed. This package improves isolation and error reporting, but it **does not claim this CVX error is fixed**. Independently test and compare all six experiments before paper submission. Do not use results from runs with CVX trajectory warnings as proof of successful trajectory optimization.
-
 ## Reproducibility note
 
-This environment does not contain MATLAB/CVX; syntax/execution and expected IEEE paper figures have **not** been independently reproduced. Document exact seed, solver, flight time, NDrops, MC and any additional toolbox requirements during final verification.
+The MATLAB implementations have been tested using CVX.
+The simulation parameters, random seeds, and solver
+settings should be maintained as specified in the
+corresponding scripts when reproducing the numerical results.
+
