@@ -17,7 +17,7 @@ This repository provides modular MATLAB implementations of the proposed AI-IBPC 
 - `Convergence_Overrides`: special trajectory implementations needed for convergence history; these have a different output signature than their Common counterparts.
 - `Cases_Functions`: specialized interference-case routines.
 - `Unlicensed_Power_Functions`: an independent implementation with its own function names; it is intentionally isolated from Common_Functions.
-- `Original_Scripts`: source snapshots for independent verification.
+- [Original MATLAB implementations](https://github.com/MuhammadWasifKhan/Multi-CUAV-Spectrum-Sharing/tree/main): standalone MATLAB scripts retained in the `main` branch for reference.
 - `configure_simulation_paths.m`: isolates the selected function directories; preserves CVX.
 
 ## Reproducibility note
