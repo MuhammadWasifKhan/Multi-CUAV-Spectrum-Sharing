@@ -1,4 +1,4 @@
-# Multi-CUAV Spectrum Sharing — professor review package
+# Multi-CUAV Spectrum Sharing — MATLAB Implementation of AI-IBPC and IA-RSS
 
 This is a *path-isolated modular extraction* of the six user-provided simulation scripts. The underlying mathematical optimization routines have **not been rederived or numerically validated here**. The earlier original full scripts are preserved under `Original_Scripts/` for comparison.
 
